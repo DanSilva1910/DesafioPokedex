@@ -2,15 +2,15 @@
 .pokemon-details-card {
     display: none;
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    /* background-color: white; */
-    padding: 20px;
+    top: 29%;
+    left: 55%;
+    transform: translate(-60%, -50%);
+    width: 70%;
+    max-width: 280px;
+    padding: 10%;
     border-radius: 10px;
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
     z-index: 1000;
-    
 }
 
 .close-button {
