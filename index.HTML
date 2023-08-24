@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- folha css -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="assists/CSS/pokedex.css">
+    <link rel="stylesheet" href="assists/CSS/card.css">
+    <!-- font Roboto -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;700;900&display=swap" rel="stylesheet">
+    <!-- normalize -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" 
+        integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!-- card lists -->
+    <title>Pokecards</title>
+</head>
+<body>
+    <h1>Pokecards</h1>
+    <section  class = "content">
+        <ol id = "pokemonList" class = "pokemons">
+         
+        </ol>
+    </section>
+
+    <div class="pagination">
+        <button id="loadMoreButton" type="button">
+            Load More
+        </button>
+    </div>
+    <!-- card details -->
+    <div id="pokemonDetailsCard" class="pokemon-details-card">
+        <button id="closeDetailsButton" class="close-button">X</button>
+        <div class="pokemon-details">
+            <h2 id="pokemonName" class="name"></h2>
+            <p id="pokemonNumber" class="number"></p>
+            <div class="types">
+                <h3>Types:</h3>
+                <ul id="pokemonTypes" class="type-list"></ul>
+            </div>
+            <img id="pokemonImage" class="image" src="" alt="">
+        </div>
+    </div>
+    
+
+
+    <!-- JavaScrip -->
+    <!-- JavaScrip -->
+    <!-- JavaScrip -->
+    <script src="assists/JS/detailsPokemon.js"></script>
+    <script src="assists/JS/pokemon-Model.js"></script>
+    <script src="assists/JS/poke-api.js"></script>
+    <script src="assists/JS/main.js"></script>
+
+    </script>
+</body>
+</html>
