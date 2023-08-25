@@ -5,6 +5,7 @@ class Pokemon  {
     number;
     name;
     type;
+    stats = [];
     types = [];
     photo;
 
@@ -15,5 +16,6 @@ class PokemonDetails {
         this.number = '';
         this.types = [];
         this.photo = '';
+        this.stats = [];
     }
 }

@@ -29,13 +29,9 @@ function fillDetailsCard(pokemonDetails) {
 }
 
 function statsPokemon(pokemonDetails) {
-    const statsElement = document.getElementById('pokemonStats');
-    
-    // Preencha as estatísticas do Pokémon
-    statsElement.innerHTML = pokemonDetails.stats.map((stats) =>
-        `<li class="stats">
-            <span class="stat-name">${stats.stat.name}</span>: ${stats.base_stat}
-        </li>`
-    ).join('');
+
+    console.log(pokemonDetails)
+
+   
 }
 
