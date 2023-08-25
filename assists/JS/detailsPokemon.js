@@ -4,7 +4,8 @@ function displayPokemonDetails(pokemonId) {
     detailsCard.style.display = 'block';
     
     pokemon.then((pokemonDetails) => {
-        fillDetailsCard(pokemonDetails);
+        fillDetailsCard(pokemonDetails)
+        statsPokemon(pokemonDetails);
     });
 
     const closeButton = document.getElementById('closeDetailsButton');
@@ -21,10 +22,20 @@ function fillDetailsCard(pokemonDetails) {
     const detailsCard = document.getElementById('pokemonDetailsCard');
     detailsCard.classList = `pokemon-details-card ${pokemonDetails.type}`;
 
-
     nameElement.textContent = pokemonDetails.name;
     numberElement.textContent = `#${pokemonDetails.number}`;
     typesElement.innerHTML = pokemonDetails.types.map(type => `<li class="type ${type}">${type}</li>`).join('');
     imageElement.src = pokemonDetails.photo;
+}
+
+function statsPokemon(pokemonDetails) {
+    const statsElement = document.getElementById('pokemonStats');
+    
+    // Preencha as estatísticas do Pokémon
+    statsElement.innerHTML = pokemonDetails.stats.map((stats) =>
+        `<li class="stats">
+            <span class="stat-name">${stats.stat.name}</span>: ${stats.base_stat}
+        </li>`
+    ).join('');
 }
 

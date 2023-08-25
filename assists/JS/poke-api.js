@@ -35,6 +35,7 @@ return fetch(url)
         .then((pokemons) => pokemons.map(pokeApi.getPokemonDetail))
         .then((detailRequest) => Promise.all(detailRequest))
         .then((pokemonDetals) => pokemonDetals)
+       
     
 
 }
@@ -44,3 +45,4 @@ pokeApi.getPokemonById = (pokemonId) => {
         .then((response) => response.json())
         .then(convertePokeApiDetalsToPokemon);
 }
+
