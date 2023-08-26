@@ -1,4 +1,6 @@
 /* Estilos para o card dos detalhes do Pokémon */
+
+
 .pokemon-details-card {
     display: none;
     position: fixed;
@@ -6,7 +8,6 @@
     left: 55%;
     transform: translate(-60%, -50%);
     height: 70%;
-   
     width: 70%;
     max-width: 280px;
     padding: 10%;
@@ -27,9 +28,17 @@
 }
 
 .pokemon-details {
-    border-radius: 1rem;
+    /* align-items: center;
+    justify-content: space-between;
+    border-radius: 1rem; */
     filter: brightness(1.1);
     text-align: center;
+    color: #fff;
+}
+
+.cardHigher{
+    display: flex;
+    justify-content: space-between;
 }
 
 .pokemon-details h2 {
@@ -39,23 +48,56 @@
 .type-list {
     list-style: none;
     padding: 0;
+    margin: 1rem;
 }
 
 .type-list li {
     display: inline;
-    margin-right: 5px;
+    margin-right: 0.5rem;
+    border-radius: 1rem;
+    padding: 0.5rem
 }
 
-.image {
+.pokemonImage {
     max-width: 100px;
     height: auto;
-    margin-top: 10px;
+    margin-top: 0px;
+}
+.pokemonAbilities{
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin: 1.1rem;
+
+}
+.pokemonAbilities .ability-list{
+    list-style: none;
+    padding: 0;
+}
+.pokemonNumber{
+    margin: 0;
+    padding: 0;
+    font-size: 2rem;
 }
 
-.stats .stat-list {
-  
-    list-style: none;
+.pokemonName {
+    text-transform: capitalize;
+    margin: 0;
+    padding: 0;
+    font-size: 2.25rem;
 }
-.abilities .ability-list{
-    list-style: none;
+
+.pokemonTypes{
+    display: flex;
+    justify-content: center;
+    margin-right: 0.5rem;
+    border-radius: 1rem;
+    padding: 0.5rem;
+}
+.type{
+    margin: 1rem;
+}
+.ability{
+    margin-right: 0;
+    margin-top: 1.3rem;
 }

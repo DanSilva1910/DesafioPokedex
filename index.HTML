@@ -36,18 +36,19 @@
         <div id="pokemonDetailsCard" class="pokemon-details-card">
             <button id="closeDetailsButton" class="close-button">X</button>
             <div class="pokemon-details">
-                <div class="name"><h2 id="pokemonName" ></h2></div>
+                <div class="cardHigher">
+                    <h2 id="pokemonName" class="pokemonName"></h2>
+                    <p id="pokemonNumber" class="pokemonNumber" ></p>
+                </div>
+
+                <div class="pokemonImage"><img id="pokemonImage"  src="" alt=""></div>
                 
-                <div class="number"><p id="pokemonNumber" ></p></div>
-    
-                <div class="types">
-                    <h3>Types:</h3>
+                <div class="pokemonTypes">
+                    <h3 class="type">Types:</h3>
                     <ul id="pokemonTypes" class="type-list"></ul>
                 </div>
 
-                <div class="image"><img id="pokemonImage"  src="" alt=""></div>
-
-                <div class="experience"><p id="pokemonExperience"></p></div>         
+                <div class="pokemonExperience"><p id="pokemonExperience"></p></div>         
     
                 <div class="stats">
                     <!-- Inclua o Chart.js -->
@@ -56,8 +57,8 @@
                     <ul id="pokemonStats" class="stat-list"></ul>
                 </div>
 
-                <div class="abilities">
-                <h3>Abilities:</h3>
+                <div class="pokemonAbilities">
+                <h3 class="ability">Abilities:</h3>
                 <ul id="pokemonAbilities" class="ability-list"></ul>
                 </div>
             </div>
