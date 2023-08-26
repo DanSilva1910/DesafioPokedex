@@ -31,16 +31,6 @@ function fillDetailsCard(pokemonDetails) {
 
 function statsPokemon(pokemonDetails) {
     //console.log(pokemonDetails);
-
-    const statsList = document.getElementById('pokemonStats');
-    statsList.innerHTML = '';
-
-    pokemonDetails.stats.forEach((stat) => {
-        const statItem = document.createElement('li');
-        statItem.textContent = `${stat.name}: ${stat.base_stat}`;
-        statsList.appendChild(statItem);
-    });
-
     const abilitiesList = document.getElementById('pokemonAbilities');
     abilitiesList.innerHTML = '';
 
