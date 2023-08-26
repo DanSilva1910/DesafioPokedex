@@ -52,4 +52,3 @@ function statsPokemon(pokemonDetails) {
     const experienceElement = document.getElementById('pokemonExperience');
     experienceElement.textContent = `Base Experience: ${pokemonDetails.base_experience}`;
 }
-

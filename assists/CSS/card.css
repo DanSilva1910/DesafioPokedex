@@ -5,6 +5,8 @@
     top: 50%;
     left: 55%;
     transform: translate(-60%, -50%);
+    height: 70%;
+   
     width: 70%;
     max-width: 280px;
     padding: 10%;
@@ -53,6 +55,7 @@
 .stats .stat-list {
   
     list-style: none;
-    
-
+}
+.abilities .ability-list{
+    list-style: none;
 }
