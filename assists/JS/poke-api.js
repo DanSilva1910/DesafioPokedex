@@ -7,14 +7,18 @@ function convertePokeApiDetalsToPokemon(pokeDetail){
     pokemon.number = pokeDetail.id
     pokemon.name = pokeDetail.name
 
+    const ability = pokeDetail.abilities.map((abilitiesSlot) => abilitiesSlot.ability.name)
+ 
+    pokemon.abilities = ability
+
+    pokemon.base_experience = pokeDetail.base_experience
+
     const stat = pokeDetail.stats.map((statsSlot) => {
         return {
             name: statsSlot.stat.name,
             base_stat: statsSlot.base_stat
         };
-    }); 
-    
-    //const[stats] = stat
+    });
 
     pokemon.stats = stat
     

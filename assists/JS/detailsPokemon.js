@@ -29,9 +29,27 @@ function fillDetailsCard(pokemonDetails) {
 }
 
 function statsPokemon(pokemonDetails) {
+    console.log(pokemonDetails);
 
-    console.log(pokemonDetails)
+    const statsList = document.getElementById('pokemonStats');
+    statsList.innerHTML = '';
 
-   
+    pokemonDetails.stats.forEach((stat) => {
+        const statItem = document.createElement('li');
+        statItem.textContent = `${stat.name}: ${stat.base_stat}`;
+        statsList.appendChild(statItem);
+    });
+
+    const abilitiesList = document.getElementById('pokemonAbilities');
+    abilitiesList.innerHTML = '';
+
+    pokemonDetails.abilities.forEach((ability) => {
+        const abilityItem = document.createElement('li');
+        abilityItem.textContent = ability;
+        abilitiesList.appendChild(abilityItem);
+    });
+
+    const experienceElement = document.getElementById('pokemonExperience');
+    experienceElement.textContent = `Base Experience: ${pokemonDetails.base_experience}`;
 }
 
