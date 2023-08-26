@@ -47,10 +47,14 @@
             </div>
     
             <div class="stats">
-                <h3>Stats:</h3>
+                  <!-- Inclua o Chart.js -->
+                  <canvas id="statsChart" style="width:100%;max-width:700px"></canvas>
+                  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
                 <ul id="pokemonStats" class="stat-list"></ul>
             </div>
             <div class="abilities">
+
                 <h3>Abilities:</h3>
                 <ul id="pokemonAbilities" class="ability-list"></ul>
             </div>
@@ -62,7 +66,7 @@
 
     <!-- JavaScrip -->
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+   
     <script src="assists/JS/detailsPokemon.js"></script>
     <script src="assists/JS/pokemon-Model.js"></script>
     <script src="assists/JS/poke-api.js"></script>

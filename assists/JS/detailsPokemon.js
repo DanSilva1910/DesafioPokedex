@@ -28,8 +28,9 @@ function fillDetailsCard(pokemonDetails) {
     imageElement.src = pokemonDetails.photo;
 }
 
+
 function statsPokemon(pokemonDetails) {
-    console.log(pokemonDetails);
+    //console.log(pokemonDetails);
 
     const statsList = document.getElementById('pokemonStats');
     statsList.innerHTML = '';
@@ -51,4 +52,38 @@ function statsPokemon(pokemonDetails) {
 
     const experienceElement = document.getElementById('pokemonExperience');
     experienceElement.textContent = `Base Experience: ${pokemonDetails.base_experience}`;
+
+    //Chame a função para criar o gráfico de estatísticas
+   createStatsChart(pokemonDetails.stats);
+}
+
+function createStatsChart(stats) {
+    const statNames = stats.map(stat => stat.name);
+    const statValues = stats.map(stat => stat.base_stat);
+    // console.log(statNames, statValues)
+
+    const ctx = document.getElementById('statsChart').getContext('2d');
+
+
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: statNames,
+            datasets: [{
+                label: 'Base Stats',
+                data: statValues,
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            indexAxis: 'y',
+            scales: {
+                x: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
 }
