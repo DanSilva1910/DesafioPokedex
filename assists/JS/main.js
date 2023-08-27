@@ -5,6 +5,7 @@ const loadMoreButton = document.getElementById('loadMoreButton')
 const maxRecords = 300
 const limit = 10
 let offset = 0;
+destroyCanvas = true;
 
 function loadPokemonItens(offset, limit) {
     pokeApi.getPokemons(offset, limit).then((pokemons = []) => {

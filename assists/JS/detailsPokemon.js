@@ -2,7 +2,10 @@ function displayPokemonDetails(pokemonId) {
     const pokemon = pokeApi.getPokemonById(pokemonId);
     const detailsCard = document.getElementById('pokemonDetailsCard');
     detailsCard.style.display = 'block';
-    
+    if (destroyCanvas === !true){
+        chartStats.destroy()
+    }
+
     pokemon.then((pokemonDetails) => {
         fillDetailsCard(pokemonDetails)
         statsPokemon(pokemonDetails);
@@ -30,7 +33,9 @@ function fillDetailsCard(pokemonDetails) {
 
 
 function statsPokemon(pokemonDetails) {
-    //console.log(pokemonDetails);
+    console.log(pokemonDetails);
+
+
     const abilitiesList = document.getElementById('pokemonAbilities');
     abilitiesList.innerHTML = '';
 
@@ -48,32 +53,51 @@ function statsPokemon(pokemonDetails) {
 }
 
 function createStatsChart(stats) {
+
+    
     const statNames = stats.map(stat => stat.name);
     const statValues = stats.map(stat => stat.base_stat);
     // console.log(statNames, statValues)
 
     const ctx = document.getElementById('statsChart').getContext('2d');
 
-
-    new Chart(ctx, {
+   
+    chartStats = new Chart(ctx, {
+        
         type: 'bar',
         data: {
             labels: statNames,
+            
             datasets: [{
                 label: 'Base Stats',
+
+                text: '90%',
+                color: '#FF6384', // Default is #000000
+                fontStyle: 'Arial', // Default is Arial
+                sidePadding: 20,// Defualt is 20 (as a percentage)
+                TooltipYAlignment:'center ',
+
                 data: statValues,
-                backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                borderColor: 'rgba(75, 192, 192, 1)',
-                borderWidth: 1
+
+                backgroundColor: '#fff',
+                borderColor: '#0000',
+                borderWidth: 1,
+                
             }]
         },
         options: {
             indexAxis: 'y',
+               
+      
             scales: {
-                x: {
+                y: {
                     beginAtZero: true
                 }
-            }
+            }   
+            
         }
     });
+
+    destroyCanvas = !true
+
 }
