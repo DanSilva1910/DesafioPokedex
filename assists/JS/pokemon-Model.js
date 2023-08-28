@@ -5,7 +5,7 @@ class Pokemon  {
     number;
     name;
     type;
-    abilities;
+    // abilities;
     base_experience;
     stats = [];
     types = [];

@@ -39,11 +39,11 @@ function statsPokemon(pokemonDetails) {
     const abilitiesList = document.getElementById('pokemonAbilities');
     abilitiesList.innerHTML = '';
 
-    pokemonDetails.abilities.forEach((ability) => {
-        const abilityItem = document.createElement('li');
-        abilityItem.textContent = ability;
-        abilitiesList.appendChild(abilityItem);
-    });
+    // pokemonDetails.abilities.forEach((ability) => {
+    //     const abilityItem = document.createElement('li');
+    //     abilityItem.textContent = ability;
+    //     abilitiesList.appendChild(abilityItem);
+    // });
 
     const experienceElement = document.getElementById('pokemonExperience');
     experienceElement.textContent = `Base Experience: ${pokemonDetails.base_experience}`;
@@ -57,47 +57,45 @@ function createStatsChart(stats) {
     
     const statNames = stats.map(stat => stat.name);
     const statValues = stats.map(stat => stat.base_stat);
+    const colorBar = ['#fff', '#d8e7e7'];
     // console.log(statNames, statValues)
-
     const ctx = document.getElementById('statsChart').getContext('2d');
 
-   
-    chartStats = new Chart(ctx, {
-        
-        type: 'bar',
-        data: {
-            labels: statNames,
-            
-            datasets: [{
-                label: 'Base Stats',
-
-                text: '90%',
-                color: '#FF6384', // Default is #000000
-                fontStyle: 'Arial', // Default is Arial
-                sidePadding: 20,// Defualt is 20 (as a percentage)
-                TooltipYAlignment:'center ',
-
-                data: statValues,
-
-                backgroundColor: '#fff',
-                borderColor: '#0000',
-                borderWidth: 1,
-                
-            }]
+    chartStats =  new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: statNames,
+        datasets: [{
+          label: 'Base Stats',
+          data: statValues ,
+          backgroundColor: colorBar,
+          borderWidth: 1
+        }]
+      },
+      options: {
+        indexAxis: 'y',
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+          y: {
+            beginAtZero: true
+          }
         },
-        options: {
-            indexAxis: 'y',
-               
-      
-            scales: {
-                y: {
-                    beginAtZero: true
+        y: {
+            ticks: {
+                font: {
+                    size: 14,
                 }
-            }   
-            
+            },
+
+           
         }
+           
+      }
+       
     });
 
     destroyCanvas = !true
+
 
 }
